@@ -1,3 +1,5 @@
-deployment:
+statefulset:
   replicas: 3
-  imageversion: mainline-alpine3.18-perl
+
+deployment:
+  imageversion: "6.0"
