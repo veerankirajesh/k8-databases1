@@ -9,9 +9,9 @@ metadata:
     tier: db
 spec:
   ports:
-  - port: 27017
-    name: mongodb
-    protocol: TCP          # ✅ Corrected spelling & capitalization
+  - protocol: TCP
+    port: 27017 #service-port
+    targetPort: 27017
   clusterIP: None
   selector:
     app: mongodb

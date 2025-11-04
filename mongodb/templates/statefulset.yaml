@@ -24,11 +24,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: "rajesh028/mongodb:{{ .Values.deployment.imageversion }}"
-        ports:
-        - containerPort: 27017
-          name: mongodb
-          protocol: TCP          # ✅ Correct here
+        image: "rajesh028/mongodb:{{ .Values.statefulset.imageVersion }}"
         volumeMounts:
         - name: mongodb
           mountPath: /data/db
@@ -41,4 +37,3 @@ spec:
       resources:
         requests:
           storage: 1Gi
-
