@@ -1,5 +1,5 @@
 statefulset:
   replicas: 2
 
-ddeployment:
+deployment:
   imageversion: "latest"
