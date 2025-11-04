@@ -1,5 +1,2 @@
 statefulset:
   replicas: 2
-
-
-
