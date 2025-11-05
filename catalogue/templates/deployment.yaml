@@ -8,9 +8,9 @@ metadata:
     project: roboshop
     tier: app
 spec:
-  replicas: {{ .values.deployment.replicas }}
+  replicas: {{ .Values.deployment.replicas }}
   selector:
-    matchLabels: # these labels are used to find t
+    matchLabels: # these labels are used to find the pods
       app: catalogue
       project: roboshop
       tier: app
@@ -23,8 +23,15 @@ spec:
     spec:
       containers:
       - name: catalogue
-        image: joindevops/catalogue:{{ .Values.deployment.imageVersions }
+        image: "joindevops/catalogue:{{ .Values.deployment.imageVersion }}"
         imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "128Mi"
+          limits:
+            cpu: "100m"
+            memory: "256Mi"
         envFrom:
         - configMapRef:
             name: catalogue
